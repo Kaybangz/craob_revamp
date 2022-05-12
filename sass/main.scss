@@ -134,10 +134,10 @@ $sec_five_bg_color: #fee540e5;
       width: 450px;
       margin-right: 1rem;
       perspective: 1000px;
+      opacity: 0;
 
       img {
         object-fit: cover;
-        opacity: 1;
       }
     }
 
@@ -229,7 +229,7 @@ $sec_five_bg_color: #fee540e5;
         span {
           margin-bottom: 1rem;
           padding: 0 0.5rem;
-          
+
           img {
             opacity: 0;
           }
