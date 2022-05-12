@@ -12,6 +12,7 @@ $sec_one_bg_color: #00f5d4a8;
 $sec_two_bg_color: #e62197c0;
 $sec_three_bg_color: #18c0f8af;
 $sec_four_bg_color: #6e0ae99d;
+$sec_five_bg_color: #fee540e5;
 
 // SECTION ONE STARTS HERE
 #section_one {
@@ -86,6 +87,11 @@ $sec_four_bg_color: #6e0ae99d;
       padding: 0.5rem;
       border-radius: 50%;
       opacity: 0;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     p {
@@ -127,37 +133,43 @@ $sec_four_bg_color: #6e0ae99d;
       height: 250px;
       width: 450px;
       margin-right: 1rem;
+      perspective: 1000px;
 
       img {
         object-fit: cover;
+        opacity: 1;
       }
     }
 
     .text_one {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
 
-      h2 {
+      h1 {
         margin-bottom: 0.5rem;
+        font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+        opacity: 0;
+      }
+
+      h4 {
+        opacity: 0;
         font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       }
-
-      h3 {
-        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      }
     }
 
-    .text_two h2 {
+    .text_two_h2 {
       font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       margin-bottom: 0.5rem;
+      opacity: 0;
     }
 
-    .text_two h3 {
+    .text_two_h3 {
+      opacity: 0;
       font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      margin-bottom: 0.7rem;
     }
 
-    .text_two p {
+    .text_two_p {
       font-size: clamp(0.9rem, 2.5vw, 1rem);
+      opacity: 0;
     }
   }
 }
@@ -186,15 +198,18 @@ $sec_four_bg_color: #6e0ae99d;
     .s3_first_text h1 {
       font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       margin-bottom: 1rem;
+      opacity: 0;
     }
 
     .s3_first_text h3 {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       margin-bottom: 1.5rem;
+      opacity: 0;
     }
 
     .s3_first_text p {
       font-size: clamp(0.8rem, 2.5vw, 1rem);
+      opacity: 0;
     }
 
     .s3_second_text {
@@ -204,6 +219,7 @@ $sec_four_bg_color: #6e0ae99d;
       h1 {
         font-size: clamp(1.2rem, 2.5vw, 1.5rem);
         margin-bottom: 0.6rem;
+        opacity: 0;
       }
 
       .section_three_icons {
@@ -213,9 +229,14 @@ $sec_four_bg_color: #6e0ae99d;
         span {
           margin-bottom: 1rem;
           padding: 0 0.5rem;
+          
+          img {
+            opacity: 0;
+          }
         }
 
         p {
+          opacity: 0;
           font-size: clamp(0.8rem, 2.5vw, 1rem);
         }
       }
@@ -246,10 +267,12 @@ $sec_four_bg_color: #6e0ae99d;
     justify-items: stretch;
 
     h1 {
+      opacity: 0;
       font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     }
 
     li {
+      opacity: 0;
       font-size: clamp(0.8rem, 2.5vw, 1rem);
       margin-bottom: 0.6rem;
     }
@@ -361,39 +384,48 @@ $sec_four_bg_color: #6e0ae99d;
   object-fit: cover;
 }
 
+// *****SECTION FIVE STARTS HERE*****
+#section_five {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient($sec_five_bg_color, $sec_five_bg_color),
+    url("../assets/craob-x-ports-hub-mechanism-913x1024.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+
+  .section_five_container {
+    height: 100vh;
+    width: $container_min_width;
+    max-width: $container_max_width;
+    margin: 0 auto;
+    padding-top: 2rem;
+    font-family: "Assistant", "sans-serif";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+}
+
 // ******MEDIA QUERIES FOR WIDTH******
 
 // *****MAX WIDTH OF 900 PIXELS*****
 @media screen and (max-width: 900px) {
-  // media queries for section one
-  .section_one_text h1,
-  .section_one_text h4 {
-    text-align: center;
-  }
-
-  .section_one_icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    span {
-      margin-bottom: 1.8rem;
-    }
-  }
-
   // media queries for section four
   #section_four .gallery_slide .slides {
-    width: 330px !important;
-    height: 340px !important;
+    width: 400px !important;
+    height: 300px !important;
 
     .nav_manual {
       margin-top: 270px !important;
-      margin-left: 100px;
+      margin-left: 130px !important;
     }
 
     .nav_auto {
       margin-top: 270px !important;
-      margin-left: 100px;
+      margin-left: 130px !important;
     }
 
     #radio1:checked ~ .first {
@@ -401,7 +433,7 @@ $sec_four_bg_color: #6e0ae99d;
     }
 
     #radio2:checked ~ .first {
-      margin-left: -80% !important;
+      margin-left: -85% !important;
     }
 
     #radio3:checked ~ .first {
@@ -409,7 +441,7 @@ $sec_four_bg_color: #6e0ae99d;
     }
 
     #radio4:checked ~ .first {
-      margin-left: -240% !important;
+      margin-left: -280% !important;
     }
   }
 
@@ -418,9 +450,8 @@ $sec_four_bg_color: #6e0ae99d;
   }
 
   .gallery_slide img {
-    width: 320px !important;
-    height: 250px !important;
-    object-fit: cover;
+    width: 360px !important;
+    height: 280px !important;
   }
 }
 
@@ -436,6 +467,12 @@ $sec_four_bg_color: #6e0ae99d;
       width: 300px !important;
     }
   }
+
+  // media queries for section five
+  #section_five img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 // *****MAX WIDTH OF 700 PIXELS*****
@@ -447,12 +484,12 @@ $sec_four_bg_color: #6e0ae99d;
 
     .nav_manual {
       margin-top: 270px !important;
-      margin-left: 100px;
+      margin-left: 100px !important;
     }
 
     .nav_auto {
       margin-top: 270px !important;
-      margin-left: 100px;
+      margin-left: 100px !important;
     }
 
     #radio1:checked ~ .first {
@@ -468,7 +505,7 @@ $sec_four_bg_color: #6e0ae99d;
     }
 
     #radio4:checked ~ .first {
-      margin-left: -320% !important;
+      margin-left: -350% !important;
     }
   }
 
@@ -485,11 +522,27 @@ $sec_four_bg_color: #6e0ae99d;
 
 // *****MAX WIDTH OF 680 PIXELS*****
 @media screen and (max-width: 680px) {
+  // media queries for section one
+  .section_one_text h1,
+  .section_one_text h4 {
+    text-align: center;
+  }
+
+  .section_one_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  //media queries for section four
   #section_four .section_four_container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-
   }
 
   #section_four .gallery_slide .slides {
@@ -528,8 +581,9 @@ $sec_four_bg_color: #6e0ae99d;
   }
 
   .gallery_slide img {
-    width: 470px !important;
-    height: 320px !important;
+    width: 350px !important;
+    height: 250px !important;
+    // background-color: red;
   }
 }
 
@@ -569,19 +623,10 @@ $sec_four_bg_color: #6e0ae99d;
       margin-left: 0;
     }
   }
-}
 
-// *****MAX WIDTH OF 680 PIXELS*****
-@media screen and (max-width: 680px) {
-  #section_four .section_four_container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-
-  }
-
+  //media queries for section four
   #section_four .gallery_slide .slides {
-    width: 650px !important;
+    width: 420px !important;
     height: 350px !important;
 
     .nav_manual {
@@ -595,32 +640,67 @@ $sec_four_bg_color: #6e0ae99d;
     }
 
     #radio1:checked ~ .first {
-      margin-left: 0;
+      margin-left: 0 !important;
     }
 
     #radio2:checked ~ .first {
-      margin-left: -70% !important;
+      margin-left: -90% !important;
     }
 
     #radio3:checked ~ .first {
-      margin-left: -140% !important;
+      margin-left: -190% !important;
     }
 
     #radio4:checked ~ .first {
-      margin-left: -220%;
+      margin-left: -290% !important;
     }
   }
 
-  #section_four .gallery_slide .slides .slide {
-    width: 320px;
-  }
-
   .gallery_slide img {
-    width: 350px !important;
-    height: 250px !important;
+    width: 420px !important;
+    height: 300px !important;
   }
 }
 
+//*****MAX WIDTH OF 679 PIXELS*****
+@media screen and (max-width: 679px) {
+  //media queries for section four
+  #section_four .gallery_slide .slides {
+    width: 450px !important;
+    height: 350px !important;
+
+    .nav_manual {
+      margin-top: 325px !important;
+      margin-left: 180px !important;
+    }
+
+    .nav_auto {
+      margin-top: 325px !important;
+      margin-left: 180px !important;
+    }
+
+    #radio1:checked ~ .first {
+      margin-left: 0 !important;
+    }
+
+    #radio2:checked ~ .first {
+      margin-left: -90% !important;
+    }
+
+    #radio3:checked ~ .first {
+      margin-left: -190% !important;
+    }
+
+    #radio4:checked ~ .first {
+      margin-left: -290% !important;
+    }
+  }
+
+  .gallery_slide img {
+    width: 450px !important;
+    height: 300px !important;
+  }
+}
 
 // *****MAX WIDTH OF 500 PIXELS*****
 @media screen and (max-width: 500px) {
@@ -666,8 +746,6 @@ $sec_four_bg_color: #6e0ae99d;
   }
 }
 
-
-
 // *****MAX WIDTH OF 400 PIXELS*****
 @media screen and (max-width: 400px) {
   .hide_mobile {
@@ -676,6 +754,10 @@ $sec_four_bg_color: #6e0ae99d;
 
   .section_one_icons .hide_desktop {
     display: block;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 

@@ -20,8 +20,8 @@ gsap.to(".heading_text_h4", {
 
 gsap.to(".hide_mobile", {
   opacity: 1,
-  duration: 3,
-  stagger: 1,
+  duration: 1,
+  stagger: 0.3,
   delay: 1.2,
   ease: "power4.inOut",
 });
@@ -34,7 +34,7 @@ gsap.to(".hide_desktop", {
   ease: "power4.inOut",
 });
 
-gsap.to("p", {
+gsap.to(".s1_p", {
   opacity: 1,
   duration: 3,
   stagger: 1,
