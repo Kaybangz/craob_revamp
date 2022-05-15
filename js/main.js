@@ -1,3 +1,5 @@
+
+
 gsap.to(".logo", {
   "clip-path": "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
   duration: 2,
