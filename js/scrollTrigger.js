@@ -2,19 +2,6 @@ gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
 
 // SECTION TWO SCROLL TRIGGER
-document.addEventListener("mousemove", (e) => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-
-  positionX = e.clientX / width - 0.8;
-  positionY = e.clientY / height - 0.8;
-
-  gsap.to(".section_two_image", {
-    rotationY: positionX * 50,
-    rotationX: -positionY * 50,
-    ease: "none",
-  });
-});
 
 gsap.from(".s2_img", {
   scrollTrigger: {
@@ -25,7 +12,7 @@ gsap.from(".s2_img", {
   },
 
   opacity: 0,
-  scale: 0.6,
+  scale: 0.7,
   ease: "power1.inOut",
   duration: 1.3,
 });
@@ -38,7 +25,7 @@ gsap.to(".text_one_h1", {
     toggleActions: "restart none none reverse",
   },
 
-  "clip-path": "polygon(66% 0, 100% 45%, 60% 100%, 0 100%, 0 0)",
+  "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
   ease: "power1.inOut",
   delay: 0.1,
   duration: 1.3,
@@ -52,7 +39,7 @@ gsap.to(".text_one_h4", {
     toggleActions: "restart none none reverse",
   },
 
-  "clip-path": "polygon(66% 0, 100% 45%, 60% 100%, 0 100%, 0 0)",
+  "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
   ease: "power1.inOut",
   delay: 0.2,
   duration: 1.3,
@@ -60,7 +47,7 @@ gsap.to(".text_one_h4", {
 
 gsap.to(".text_two_h2", {
   scrollTrigger: {
-    trigger: ".text_one_h4",
+    trigger: "#section_two",
     start: "top center",
     end: "bottom center",
     toggleActions: "restart none none reverse",
@@ -73,7 +60,7 @@ gsap.to(".text_two_h2", {
 
 gsap.to(".text_two_h3", {
   scrollTrigger: {
-    trigger: ".text_one_h4",
+    trigger: "#section_two",
     start: "top center",
     end: "bottom center",
     toggleActions: "restart none none reverse",
@@ -88,7 +75,7 @@ gsap.to(".text_two_h3", {
 
 gsap.to(".text_two_p", {
   scrollTrigger: {
-    trigger: ".text_one_h4",
+    trigger: "#section_two",
     start: "top center",
     end: "bottom center",
     toggleActions: "restart none none reverse",

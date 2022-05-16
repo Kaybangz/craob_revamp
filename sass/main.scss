@@ -1,5 +1,5 @@
 $container_max_width: 900px;
-$container_min_width: 93%;
+$container_min_width: 90%;
 $sec_one_bg_color: #00f5d4a8;
 $sec_two_bg_color: #e62197c0;
 $sec_three_bg_color: #18c0f8af;
@@ -27,6 +27,7 @@ body {
   left: 0;
   display: grid;
   display: none;
+  font-family: "Assistant", "sans-serif";
 
   .nav_menu_container {
     width: 100%;
@@ -34,13 +35,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #28f5da;
-
-    color: #f32aa3;
-    color: #08a9df;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
     span {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 5px;
@@ -49,6 +51,10 @@ body {
       &:nth-child(2) {
         border-right: 1px solid rgb(83, 83, 83);
         border-left: 1px solid rgb(83, 83, 83);
+      }
+
+      img {
+        margin-bottom: 3px;
       }
     }
   }
@@ -173,11 +179,11 @@ body {
       height: 250px;
       width: 450px;
       margin-right: 1rem;
-      perspective: 1000px;
 
       img {
         opacity: 1;
         object-fit: cover;
+        animation: bounce 2s ease-in-out infinite;
       }
     }
 
@@ -187,12 +193,10 @@ body {
       h1 {
         margin-bottom: 0.5rem;
         font-size: clamp(1.3rem, 2.5vw, 1.6rem);
-        // opacity: 0;
         clip-path: polygon(0 0, 0 55%, 0 99%, 0 100%, 0 0);
       }
 
       h4 {
-        // opacity: 0;
         font-size: clamp(1.2rem, 2.5vw, 1.5rem);
         clip-path: polygon(0 0, 0 55%, 0 99%, 0 100%, 0 0);
       }
@@ -462,6 +466,18 @@ body {
   }
 }
 
+@keyframes bounce {
+  0% {
+    transform: translate(0%, -3%);
+  }
+  50% {
+    transform: translate(0%, -9%);
+  }
+  100% {
+    transform: translate(0%, -3%);
+  }
+}
+
 // ******MEDIA QUERIES FOR WIDTH******
 
 // *****MAX WIDTH OF 900 PIXELS*****
@@ -530,10 +546,10 @@ body {
 
 // *****MAX WIDTH OF 700 PIXELS*****
 @media screen and (max-width: 700px) {
-  .nav_menu{
+  .nav_menu {
     display: block;
   }
-  
+
   // media queries for section four
   #section_four .gallery_slide .slides {
     width: 320px !important;
@@ -640,7 +656,6 @@ body {
   .gallery_slide img {
     width: 350px !important;
     height: 250px !important;
-    // background-color: red;
   }
 }
 
@@ -654,7 +669,7 @@ body {
     .section_two_image {
       height: 298px !important;
       width: 300px !important;
-      margin-bottom: -2rem;
+      margin-bottom: -3rem;
 
       img {
         object-fit: fill;
