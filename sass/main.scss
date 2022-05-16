@@ -46,11 +46,25 @@ body {
       align-items: center;
       justify-content: center;
       padding: 5px;
-      flex: 1;
       cursor: pointer;
+      flex: 1;
+
       &:nth-child(2) {
         border-right: 1px solid rgb(83, 83, 83);
         border-left: 1px solid rgb(83, 83, 83);
+      }
+
+      a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+      }
+
+      p {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
       }
 
       img {
